@@ -1,18 +1,9 @@
 from fastapi import FastAPI
-from .DataModels.Movie import Movie
+from server.api.routes.movie import movie_router
 
 app = FastAPI()
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app.include_router(movie_router, prefix="/api/movie")
 
 
-@app.post("/movie", response_model=Movie)
-async def movie(movie: Movie):
-
-
-
-    
-    return movie
