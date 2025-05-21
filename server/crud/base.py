@@ -26,3 +26,5 @@ class CRUDBase(Generic[ModelType]):
             db.delete(obj)
             db.commit()
         return obj
+
+
